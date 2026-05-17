@@ -243,7 +243,6 @@ terminalIcon.fromTo('.maintained_websites_con .terminal_icon',{opacity: 0,  left
     start: 'top top',
     end: 'bottom -100%',
     scrub: true,
-    markers: true
   }
 })
 
