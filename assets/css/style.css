@@ -61,7 +61,6 @@ em, i { font-style: italic; }
     .hero_cta p {max-width: 400px; width: 100%; text-shadow: 1px 1px 1px #000;}
     .hero_cta mark{color: var(--priColor)}
 
-
 #main {min-height: 100vh; background: var(--thiColor); margin-top: 1250px}
     .main_con {max-width: 1010px; margin: 0 auto; min-height: 100vh;}
 
@@ -71,7 +70,6 @@ em, i { font-style: italic; }
     .main_info .location {rotate: 4deg;}
     .main_info .skill {margin: -89px -65px 0 auto; rotate: 2deg;}
     .main_info h2 div{ background: linear-gradient(to right,var(--secColor) 50%,#252525 50%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text;  -webkit-text-fill-color: transparent; color: transparent; }
-
 
 #bottom1 {background: var(--thiColor); color: var(--secColor);} 
     .bottom1_con {min-height: 100vh;}

@@ -174,7 +174,7 @@ gsap.from('.main_info .skill', {
 /* BOTTOM 1 */
 gsap.fromTo('.bottom1_info', {filter: 'blur(10px)'}, {
   filter: 'blur(0px)',
-  scale: 0.1,
+  scale: 0.2,
   scrollTrigger: {
     trigger: '.bottom1_info',
     scrub: true,
@@ -209,7 +209,6 @@ let maintainedWebsiteTl = gsap.timeline(
     scrollTrigger: {
     trigger: '.maintained_websites_con',
     start: 'top center',
-    toggleActions: 'play none reverse none'
   }}
 );
 
@@ -235,15 +234,16 @@ maintainedWebsiteTl.fromTo('.maintained_websites_con ul', {
 })
 
 let terminalIcon = gsap.timeline() 
-terminalIcon.fromTo('.maintained_websites_con .terminal_icon',{opacity: 0}, {
+terminalIcon.fromTo('.maintained_websites_con .terminal_icon',{opacity: 0,  left: 'unset', right: '100%'}, {
   opacity: 1,
   left: 'unset',
-  right:'-1965px',
+  right: '-100%',
   scrollTrigger: {
     trigger: '.maintained_websites_con',
     start: 'top top',
     end: 'bottom -100%',
     scrub: true,
+    markers: true
   }
 })
 
@@ -255,6 +255,7 @@ terminalIcon.to('.terminal_icon i', {
   ease: 'none',
   duration: 1,
   yoyo: true,
+  
 })
 
 // Personal Project
@@ -264,7 +265,6 @@ let personalProjectTl = gsap.timeline({
     start: "left 70%",
     end: "left 20%",
     containerAnimation: horizontalScroll,
-    toggleActions: 'play none reverse none'
   }
 })
 
