@@ -53,11 +53,11 @@ em, i { font-style: italic; }
     .hero_con .rocket {position:absolute; left: 360px;}
     .hero_con .worm {position:absolute; right: 360px;}
 
-    .hero_info {}
+    .hero_info {display: flex; flex-direction: column; gap: 100px}
     .hero_info h1{font-size: 200px; color: var(--secColor); text-align: center;  font-weight: 700; text-shadow: 1px 1px 1px #000;}
     .hero_info h1 span {display: block;}
 
-    .hero_cta {display: flex; justify-content: space-between; color: var(--secColor); margin: 100px 0 0; gap: 50px}
+    .hero_cta {display: flex; justify-content: start; color: var(--secColor);}
     .hero_cta p {max-width: 400px; width: 100%; text-shadow: 1px 1px 1px #000;}
     .hero_cta mark{color: var(--priColor)}
 
@@ -75,7 +75,8 @@ em, i { font-style: italic; }
 
 #bottom1 {background: var(--thiColor); color: var(--secColor);} 
     .bottom1_con {min-height: 100vh;}
-    .bottom1_info h2{font-size: 400px; text-align: center; color: var(--secColor); font-weight: 600;}
+    .bottom1_info {width: 100%; margin: 0 auto;}
+    .bottom1_info h2{font-size: 370px; text-align: center; color: var(--secColor); font-weight: 600;}
 
 #bottom2 {background: var(--thiColor); color: var(--secColor);} 
     .bottom2_con { min-height: 100vh; display: flex; flex-wrap: nowrap;}
@@ -84,8 +85,8 @@ em, i { font-style: italic; }
     .bottom2_con .bottom2_panel { width: 100%; flex: none; height: 100%; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; flex-direction: column;}
 
     .maintained_websites_con{}
-    .maintained_websites_con h2{font-size: 64px; margin-bottom: 25px;}
-    .maintained_websites_con ul{list-style: none; padding: 30px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 50px;}
+    .maintained_websites_con h2{font-size: 42px; margin-bottom: 25px; background: var(--priColor); padding: 25px 10px; rotate: -2deg; margin-left: -25px;}
+    .maintained_websites_con ul{list-style: none; padding: 30px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 50px; background: var(--forColor); padding: 50px; border: 15px solid var(--thiColor); position: relative; z-index: 1; margin-top: -35px;}
     .maintained_websites_con ul li{color: var(--secColor); background: #ffffff1a; border-radius: 10px; display: flex; align-items: center; transition: all .3s ease;}
     .maintained_websites_con ul li:hover {background: #0ae44826;}
     .maintained_websites_con ul li:hover img {transform: translate(20px, -30px);;}
@@ -93,8 +94,8 @@ em, i { font-style: italic; }
     .maintained_websites_con .terminal_icon {position: absolute; left: 0; top: 50%; bottom: 50%;}
     .maintained_websites_con .terminal_icon i {font-size: 64px; color: var(--secColor);}
 
-    .personal_project_con h2{font-size: 64px; margin-bottom: 25px;}
-    .personal_project_con ul{list-style: none; padding: 30px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 50px;}
+    .personal_project_con h2{font-size: 42px; margin-bottom: 25px; background: var(--priColor); padding: 25px 10px; rotate: -2deg; margin-left: -25px;}
+    .personal_project_con ul{list-style: none; padding: 30px 0 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 50px; background: var(--forColor); padding: 50px; border: 15px solid var(--thiColor); position: relative; z-index: 1; margin-top: -35px;}
     .personal_project_con ul li{color: var(--secColor); background: #ffffff1a; border-radius: 10px; display: flex; align-items: center; transition: all .3s ease;}
     .personal_project_con ul li:hover {background: #0ae44826;}
     .personal_project_con ul li:hover img {transform: translate(20px, -30px);;}
@@ -102,7 +103,7 @@ em, i { font-style: italic; }
     
 
     .technology_stack_con {flex-direction: column; gap: 50; display: flex;}
-    .technology_stack_con h2 {font-size: 64px; margin-bottom: 25px;}
+    .technology_stack_con h2 {font-size: 64px; margin-bottom: 75px;}
     .technology_stack_con ul {display: flex; justify-content: center; align-items: center; gap: 25px;}
     .technology_stack_con ul li img {filter: grayscale(100); transition: 0.3s all;}
     .technology_stack_con ul li img:hover {filter: grayscale(0);}

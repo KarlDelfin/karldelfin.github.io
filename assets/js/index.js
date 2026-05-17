@@ -129,7 +129,6 @@ gsap.to('.main_info', {
     trigger: '.main_info',
     start: 'top bottom',
     scrub: true,
-    pinSpacing: false,
   }
 })
 
@@ -175,13 +174,12 @@ gsap.from('.main_info .skill', {
 /* BOTTOM 1 */
 gsap.fromTo('.bottom1_info', {filter: 'blur(10px)'}, {
   filter: 'blur(0px)',
-  scale: 0.2,
-  y:-300,
+  scale: 0.1,
   scrollTrigger: {
     trigger: '.bottom1_info',
     scrub: true,
-    start: 'top bottom',
-    end: 'bottom bottom',
+    start: 'top 80%',
+    end: 'bottom 70%',
   }
 })
 
@@ -205,56 +203,35 @@ mm.add("(min-width: 1011px)", () => {
 
 });
 
+// Maintained Websites
+let maintainedWebsiteTl = gsap.timeline(
+   {
+    scrollTrigger: {
+    trigger: '.maintained_websites_con',
+    start: 'top center',
+    toggleActions: 'play none reverse none'
+  }}
+);
+
+maintainedWebsiteTl.fromTo('.maintained_websites_con h2', {
+  clipPath: 'inset(0% 100% 0% 0%)',
+}, {
+  clipPath: 'inset(0% 0% 0% 0%)',
+})
+
 let maintainedWebsiteConH2 = new SplitText('.maintained_websites_con h2', {type: 'lines, words', linesClass: 'line'})
-gsap.from(maintainedWebsiteConH2.words, {
+maintainedWebsiteTl.from(maintainedWebsiteConH2.words, {
   x: 100,
   y: 100,
   stagger: {
     each: 0.1,
   },
-  scrollTrigger: {
-    trigger: '.maintained_websites_con',
-    start: 'top bottom',
-    end: 'bottom center',
-  }
 })
 
-const personalProjectH2 = new SplitText('.personal_project_con h2', {type: 'lines, words', linesClass: 'line'});
-gsap.from(personalProjectH2.words, {
-  x: -100,
-  y: -100,
-  opacity: 0,
-  stagger: {
-    each: 0.1,
-  },
-  scrollTrigger: {
-    trigger: '.personal_project_con h2',
-    start: "left 70%",
-    end: "left 20%",
-    containerAnimation: horizontalScroll,
-  }
-});
-
-
-gsap.fromTo('.maintained_websites_con ul li', {
-  y: 100,
-  x: -100,
-  opacity: 0,
-},
-{
-  y: 0,
-  x: 0,
-  opacity: 1, 
-  stagger: {
-    each: 0.3,
-    from: 'random',
-  },
-  scrollTrigger: {
-    trigger: '.maintained_websites_con',
-    start: 'top 30%',
-    end: 'bottom 60%  ',
-    containerAnimation: horizontalScroll,
-  }
+maintainedWebsiteTl.fromTo('.maintained_websites_con ul', {
+  clipPath: 'inset(0% 0% 100% 0%)',
+}, {
+  clipPath: 'inset(0% 0% 0% 0%)',
 })
 
 let terminalIcon = gsap.timeline() 
@@ -280,25 +257,43 @@ terminalIcon.to('.terminal_icon i', {
   yoyo: true,
 })
 
-gsap.fromTo('.personal_project_con ul li', {
-  y: 100,
-  x: 100,
-  opacity: 0
-},
-{
-  y: 0,
-  x: 0,
-  opacity: 1, 
+// Personal Project
+let personalProjectTl = gsap.timeline({
+   scrollTrigger: {
+    trigger: '.personal_project_con h2',
+    start: "left 70%",
+    end: "left 20%",
+    containerAnimation: horizontalScroll,
+    toggleActions: 'play none reverse none'
+  }
+})
+
+personalProjectTl.fromTo('.personal_project_con h2', {
+  clipPath: 'inset(0% 100% 0% 0%)',
+}, {
+  clipPath: 'inset(0% 0% 0% 0%)',
+})
+
+const personalProjectH2 = new SplitText('.personal_project_con h2', {type: 'lines, words', linesClass: 'line'});
+personalProjectTl.from(personalProjectH2.words, {
+  x: -100,
+  y: -100,
+  opacity: 0,
   stagger: {
-    each: 0.3,
-    from: 'random',
+    each: 0.1,
   },
   scrollTrigger: {
-    trigger: '.personal_project_con',
-    start: 'top center',
-    end: 'bottom 80%',
+    trigger: '.personal_project_con h2',
+    start: "left 70%",
+    end: "left 20%",
     containerAnimation: horizontalScroll,
   }
+});
+
+personalProjectTl.fromTo('.personal_project_con ul', {
+  clipPath: 'inset(0% 0% 100% 0%)',
+}, {
+  clipPath: 'inset(0% 0% 0% 0%)',
 })
 
 
