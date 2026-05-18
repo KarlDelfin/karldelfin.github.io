@@ -113,11 +113,6 @@ gsap.from(heroCtaP.words, {
   stagger: {
     each: 0.2,
   },
-  // scrollTrigger: {
-  //   trigger: '.hero_cta p',
-  //   start: 'top 80%',
-  //   end: 'bottom 80%',
-  // }
 })
 
 /* MAIN */
@@ -218,6 +213,13 @@ maintainedWebsiteTl.fromTo('.maintained_websites_con h2', {
   clipPath: 'inset(0% 0% 0% 0%)',
 })
 
+maintainedWebsiteTl.from('.maintained_websites_con .circle', {
+  y: -1000,
+  opacity: 0,
+  ease: 'bounce.out',
+  duration: 1,
+})
+
 let maintainedWebsiteConH2 = new SplitText('.maintained_websites_con h2', {type: 'lines, words', linesClass: 'line'})
 maintainedWebsiteTl.from(maintainedWebsiteConH2.words, {
   x: 100,
@@ -234,10 +236,10 @@ maintainedWebsiteTl.fromTo('.maintained_websites_con ul', {
 })
 
 let terminalIcon = gsap.timeline() 
-terminalIcon.fromTo('.maintained_websites_con .terminal_icon',{opacity: 0,  left: 'unset', right: '100%'}, {
+terminalIcon.fromTo('.maintained_websites_con .terminal_icon',{opacity: 0,  left: 'unset', right: '0%'}, {
   opacity: 1,
   left: 'unset',
-  right: '-100%',
+  right: '-300%',
   scrollTrigger: {
     trigger: '.maintained_websites_con',
     start: 'top top',
@@ -295,6 +297,12 @@ personalProjectTl.fromTo('.personal_project_con ul', {
   clipPath: 'inset(0% 0% 0% 0%)',
 })
 
+gsap.to('.personal_project_con .clover', {
+  rotate: 360,
+  ease: 'none',
+  repeat: -1,
+  duration: 5,
+})
 
 gsap.fromTo('.technology_stack_con ul', {clipPath: 'inset(0% 100% 0% 0%)'}, {
   clipPath: 'inset(0% 0% 0% 0%)',
