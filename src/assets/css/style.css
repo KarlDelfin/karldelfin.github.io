@@ -103,7 +103,7 @@ em, i { font-style: italic; }
     .timeline_con text { fill: white; font-size: 24px;}
 
     .timeline_con {display: flex; margin-top: 70vh;}
-    .timeline_info {width: 100%; position: relative; text-align: center;}
+    .timeline_info {width: 100%; position: relative;}
     .timeline_info h2 {font-size: 54px; font-weight: 600;}
     .timeline_info p{color: var(--priColor); font-size: 12px; margin-bottom: 15px;}
     .timeline_info div {position: absolute; scale: 0}
@@ -111,6 +111,9 @@ em, i { font-style: italic; }
     .timeline_info .text_2022 {top: 185px; left: 0;}
     .timeline_info .text_2024 {top: 594px; left: -160px;}
     .timeline_info .text_2025 {top: 1025px; left: -20px;}
+    .timeline_info .img_con {position: absolute; right: -200px;}
+    .timeline_info .img_con img {width: 75px; margin-left: -15px; rotate: 3deg;}
+    .timeline_info .img_con img:nth-child(odd) {rotate: -5deg;}
 
     .contact_con {min-height: 100vh; margin: 500px 0 0 0;}
 

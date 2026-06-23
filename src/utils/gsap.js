@@ -98,7 +98,6 @@ export function gsapController() {
         scrub: true,
         start: 'top top',
         end: 'bottom top',
-        markers: true,
       },
     })
 
@@ -381,9 +380,9 @@ ScrollTrigger.create({
         transformOrigin: 'center', 
         ease: "elastic(1.5, 1)"
       }})
-      .to(".timeline_con .ball02, .text01, .text_2022", {}, 0.84) 
-      .to(".timeline_con .ball03, .text02, .text_2024", {}, 1.36)
-      .to(".timeline_con .ball04, .text03, .text_2025", {}, 1.92)
+      .to(".timeline_con .ball02, .text01, .text_2022, .text_2022 .img_con", {}, 0.84) 
+      .to(".timeline_con .ball03, .text02, .text_2024, .text_2024 .img_con", {}, 1.36)
+      .to(".timeline_con .ball04, .text03, .text_2025, .text_2025 .img_con", {}, 1.92)
 
       const main = gsap.timeline({
         scrollTrigger: {
@@ -427,17 +426,17 @@ ScrollTrigger.create({
           start: "top center",
           end: 'bottom 10%',
           onEnter: () => {
-            gsap.to(['#header', '#nav'], {
+            gsap.to(['.nav_con ', '.header_con'], {
               opacity: 1,
-              color: 'var(--thiColor)',
+              color: 'var(--secColor)',
             })
           },
           onLeaveBack: () => {
-            gsap.to(['#header', '#nav'], {
+            gsap.to(['.nav_con ', '.header_con'], {
               opacity: 0,
               color: 'var(--secColor)',
             })
-          }
+          },
         }
       })
   })

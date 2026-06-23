@@ -66,7 +66,7 @@
       </div>
     </div>
     
-      <!-- BOTTOM -->
+  <!-- BOTTOM -->
   <div id="bottom">
     <div class="bottom_con">
       <div class="bottom_bg">
@@ -158,6 +158,9 @@
           <div class="timeline_info">
             <div class="text_2022">
               <p>Started working part-time as a <mark>Truck Helper</mark> during the<br/>pandemic while continuing my studies at <mark>University of Cebu</mark>.</p>
+              <div class="img_con">
+                <img src="../assets/images/trucking.jpg" alt="trucking">
+              </div>
             </div>
             <div class="text_2024">
               <p>Received my <mark>Alliance Jumpstart Program</mark><br/>and <mark>Skanlog ELEV8 Internship</mark> certificates.</p>
@@ -165,6 +168,10 @@
             <div class="text_2025">
               <p>Graduated from <mark>University of Cebu - Main Campus.</mark></p>
               <p>Started my journey as a <mark>Web Developer</mark><br/>at a company based in Talisay, Cebu.</p>
+              <div class="img_con">
+                <img src="../assets/images/uc-quadrangle.webp" alt="uc quadrangle">
+                <img src="../assets/images/employee-working.webp" alt="employee working">
+              </div>
             </div>
           </div>
         </div>
