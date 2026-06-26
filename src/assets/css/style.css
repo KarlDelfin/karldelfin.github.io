@@ -97,12 +97,26 @@ em, i { font-style: italic; }
 
 #footer {min-height: 100vh; position: relative; background: var(--secColor); z-index: 9;}
 #footer::before { content: ''; position: absolute; background: linear-gradient(180deg,rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 1) 50%); height: 200px; width: 100%; top: -200px; }
-    .timeline_con svg { max-width: 600px; overflow: visible;}
+    .technologies_con {  width: 100%; height: 100vh; text-align: center; overflow: hidden; position: relative;}
+    .technologies_con .slider { position: absolute; top: 10%; width: 12.5rem; height: 100pxs; left: calc(50% - 6.25rem); transform-style: preserve-3d; transform: perspective(25c.5rem); animation: autoRun 40s linear infinite; z-index: 2; }
+    .technologies_con .slider .item { position: absolute; inset: 0 0 0 0; transform: rotateY( calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg) ) translateZ(25rem); }
+    
+    @keyframes autoRun {
+        from {
+            transform: perspective(62.5rem) rotateX(-16deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(62.5rem) rotateX(-16deg) rotateY(360deg);
+        }
+    }    
+    .technologies_info {color: var(--priColor); font-size: 64px; font-weight: 700; position: absolute; left: 50%; right: 0; top: 20%; transform: translate(-50%, -50%);}
+
+.timeline_con svg { max-width: 600px; overflow: visible;}
     .timeline_con .ball { fill: white; visibility: hidden; }
     .timeline_con .line { fill: none; /* stroke: white; */ stroke-width: 2px; }
     .timeline_con text { fill: white; font-size: 24px;}
 
-    .timeline_con {display: flex; margin-top: 70vh;}
+    .timeline_con {display: flex; margin-top: 50vh;}
     .timeline_info {width: 100%; position: relative;}
     .timeline_info h2 {font-size: 54px; font-weight: 600;}
     .timeline_info p{color: var(--priColor); font-size: 12px; margin-bottom: 15px;}
@@ -112,7 +126,7 @@ em, i { font-style: italic; }
     .timeline_info .text_2024 {top: 594px; left: -160px;}
     .timeline_info .text_2025 {top: 1025px; left: -20px;}
     .timeline_info .img_con {position: absolute; right: -200px;}
-    .timeline_info .img_con img {width: 75px; margin-left: -15px; rotate: 3deg;}
+    .timeline_info .img_con img {width: 65px; margin-left: -15px; rotate: 3deg;}
     .timeline_info .img_con img:nth-child(odd) {rotate: -5deg;}
 
     .contact_con {min-height: 100vh; margin: 500px 0 0 0;}

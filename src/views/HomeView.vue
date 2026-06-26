@@ -132,6 +132,31 @@
 
     <!-- FOOTER -->
     <div id="footer">
+      <div class="technologies_con">
+        <div class="slider" style="--quantity: 6">
+          <div class="item" style="--position: 1">
+            <img src="../assets/images/html.webp" alt="HTML" />
+          </div>
+          <div class="item" style="--position: 2">
+            <img src="../assets/images/css.webp" alt="CSS" />
+          </div>
+          <div class="item" style="--position: 3">
+            <img src="../assets/images/javascript.webp" alt="Javacript" />
+          </div>
+          <div class="item" style="--position: 4">
+            <img src="../assets/images/gsap.webp" alt="GSAP" />
+          </div>
+          <div class="item" style="--position: 5">
+            <img src="../assets/images/csharp.webp" alt="C#" />
+          </div>
+          <div class="item" style="--position: 6">
+            <img src="../assets/images/vue.webp" alt="Vue" />
+          </div>
+        </div>
+        <div class="technologies_info">
+          <h2>Techonologies Used</h2>
+        </div>
+      </div>
       <div class="timeline">
         <div class="timeline_info">
           <h2>Let's take it back.</h2>
@@ -159,7 +184,8 @@
             <div class="text_2022">
               <p>Started working part-time as a <mark>Truck Helper</mark> during the<br/>pandemic while continuing my studies at <mark>University of Cebu</mark>.</p>
               <div class="img_con">
-                <img src="../assets/images/trucking.jpg" alt="trucking">
+                <img src="../assets/images/trucking.webp" alt="trucking">
+                <img src="../assets/images/uc-study-hall.webp" alt="uc study hall">
               </div>
             </div>
             <div class="text_2024">
