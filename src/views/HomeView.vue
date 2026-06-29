@@ -132,29 +132,15 @@
 
     <!-- FOOTER -->
     <div id="footer">
-      <div class="technologies_con">
-        <div class="slider" style="--quantity: 6">
-          <div class="item" style="--position: 1">
-            <img src="../assets/images/html.webp" alt="HTML" />
-          </div>
-          <div class="item" style="--position: 2">
-            <img src="../assets/images/css.webp" alt="CSS" />
-          </div>
-          <div class="item" style="--position: 3">
-            <img src="../assets/images/javascript.webp" alt="Javacript" />
-          </div>
-          <div class="item" style="--position: 4">
-            <img src="../assets/images/gsap.webp" alt="GSAP" />
-          </div>
-          <div class="item" style="--position: 5">
-            <img src="../assets/images/csharp.webp" alt="C#" />
-          </div>
-          <div class="item" style="--position: 6">
-            <img src="../assets/images/vue.webp" alt="Vue" />
-          </div>
-        </div>
-        <div class="technologies_info">
-          <h2>Techonologies Used</h2>
+      <div id="circle_gallery" class="circle_gallery">
+        <div id="circle_gallery_pin" class="circle_gallery_pin" >
+          <img class="cg_img" src="../assets/images/html.webp">
+          <img class="cg_img" src="../assets/images/css.webp">
+          <img class="cg_img" src="../assets/images/javascript.webp">
+          <img class="cg_img" src="../assets/images/gsap.webp">
+          <img class="cg_img" src="../assets/images/csharp.webp">
+          <img class="cg_img" src="../assets/images/vue.webp">
+          <p class="cg_phrase" id="cg_phrase"> Technologies <span class="other_accent">Used</span> </p>
         </div>
       </div>
       <div class="timeline">
@@ -217,6 +203,7 @@
 <script>
 import { gsapController  } from '@/utils/gsap'
 import { imageTrail  } from '@/utils/imageTrail'
+import { circleGallery  } from '@/utils/circleGallery'
 import gsap from 'gsap/all'
 export default {
   data() {
@@ -232,11 +219,10 @@ export default {
   mounted() {
     imageTrail('#banner')
     gsapController()
+    circleGallery()
     this.getYear()
   },
 }
-
-    console.log(window.innerWidth)
 
 </script>
 
