@@ -101,7 +101,7 @@ export function gsapController() {
       },
     })
 
-    /* Banner */
+    /* BANNER */
     let bannerConH1SpanST = new SplitText(['.banner_con h1 span:first-child', '.banner_con h1 span:last-child'], {type: 'chars'})
     gsap.from(bannerConH1SpanST.chars, {
       ease: 'bounce.inOut',
@@ -145,6 +145,20 @@ export function gsapController() {
     })
 
     /* MAIN */
+    gsap.from('.circles_con div', {
+      scale: 0,
+      stagger: {
+        each: 0.2,
+        from: 'edges'
+      },
+      ease: 'bounce.out',
+      scrollTrigger: {
+        trigger: '.circles_con',
+        start: 'top bottom',
+        end: 'bottom center',
+        scrub: true,
+      }
+    })
     let mainConTexts = new SplitText(['.main_info h2', '.main_info p'], {type: 'lines'})
     let mainTl = gsap.timeline({
       scrollTrigger: {
@@ -179,12 +193,10 @@ export function gsapController() {
         start: 'top 30%',
         end: 'bottom bottom',
       }
-    })
-    mainInfoH2SpanTl.to('.location', {
+    }).to('.location', {
       rotate: 3,
       clipPath: 'inset(0% 0% 0% 0%)'
-    })
-    mainInfoH2SpanTl.to('.position', {
+    }).to('.position', {
       rotate: -2,
       clipPath: 'inset(0% 0% 0% 0%)'
     })

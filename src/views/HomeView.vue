@@ -52,6 +52,7 @@
 
     <!-- MAIN -->
     <div id="main">
+      <div class="circles_con"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       <div class="wrapper">
         <div class="main_con">
           <div class="main_info">
@@ -109,6 +110,12 @@
               <img src="../assets/images/image-to-text.webp" alt="Image to Text">
               <a href="https://karldelfin.github.io/image-to-text" target="_blank">
                   <p>Image to Text</p>
+              </a>
+          </li>
+          <li>
+              <img src="../assets/images/calendar.webp" alt="Calendar">
+              <a href="https://karldelfin.github.io/calendar" target="_blank">
+                  <p>Calendar</p>
               </a>
           </li>
         </ul>

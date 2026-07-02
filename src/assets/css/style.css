@@ -55,6 +55,9 @@ em, i { font-style: italic; }
     .nav_con {display: flex; justify-content: center; padding: 25px 0; border-top: 1px solid #8a8989; position: relative;}
     .nav_con .version {position: absolute; left: 0; font-size: 1rem; color: var(--thiColor);}
     .nav_con .social_media {display: flex; gap: 25px;}
+    .nav_con .social_media a {transition: all .3s linear;}
+    .nav_con .social_media a:hover {text-decoration: underline; }
+
     .nav_con .copyright { position: absolute; right: 0; font-size: 1rem;}
 
 #banner {min-height: 100vh; position: relative; background: var(--priColor); z-index: 9;}
@@ -66,8 +69,8 @@ em, i { font-style: italic; }
     .banner_con p {position: absolute; font-size: 2rem; font-style: italic; font-family: var(--secFont);}
 
 #main {min-height: 100vh; position: relative; background: var(--secColor); z-index: 9;}
-/* #main::before { content: ''; position: absolute; background: linear-gradient(180deg,rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 1) 50%); height: 200px; width: 100%; top: -200px; }
-#main::after { content: ''; position: absolute; background: linear-gradient(0deg,rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 1) 50%); height: 200px; width: 100%; bottom: -200px; } */
+    #main .circles_con {position: absolute; top: -75px; display: flex; justify-content: center; width: 1920px; margin-left: 50%; transform:translateX(-50%); }
+    #main .circles_con div{width: 150px; aspect-ratio: 1/1; border-radius: 50%; background: var(--secColor);}
     .main_con {min-height: 100vh; display: flex; justify-content: space-evenly; /* padding: 200px 0;  */gap: 50px;}
     
     .main_info {display: flex; flex-direction: column; justify-content: center; align-items: center;}
