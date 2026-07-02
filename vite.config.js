@@ -8,9 +8,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   // base: '/image-to-text',
-  // build: {
-  //   outDir: 'docs',
-  // },
+  build: {
+    outDir: 'docs',
+  },
   plugins: [vue(), vueJsx(), vueDevTools()],
   resolve: {
     alias: {

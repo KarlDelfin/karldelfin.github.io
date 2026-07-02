@@ -41,7 +41,7 @@ export function gsapController() {
       duration: 0.3,
       ease: "power1.out",
       onUpdate: () => {
-        document.querySelector(".loader_content h1").textContent =
+        document.querySelector(".loader_content p").textContent =
           Math.floor(counter.value) + "%";
 
         gsap.set(".progress_fill", {
@@ -82,7 +82,7 @@ export function gsapController() {
       opacity: 0
     })
 
-    let headerConP = new SplitText(['.header_con p', '.version', '.social_media a', '.copyright'], {type: 'lines, lines', linesClass: 'line'})
+    let headerConP = new SplitText(['.header_con p', '.version', '.social_media a', '.copyright'], {type: 'lines'})
     headerNavTl.from(headerConP.lines, {
       y: 20,
       opacity: 0,
@@ -192,7 +192,7 @@ export function gsapController() {
     /* BOTTOM */
     let bottomConTl = gsap.timeline({
        scrollTrigger: {
-          trigger: '.bottom_con',
+          trigger: '.personal_projects',
           scrub: true,
           start: 'top bottom',
           end: 'bottom bottom',
@@ -200,46 +200,19 @@ export function gsapController() {
       }
     )
 
-    bottomConTl.from('.bottom_con ul li p', {
+    bottomConTl.from('.personal_projects ul li p', {
       filter: 'blur(10px)',
       opacity: 0,
       y: 50,
       stagger: 0.2
     })
 
-    const bottomPulse = gsap.timeline({
-      defaults: {
-        scale: 2,
-        autoAlpha:1,
-        transformOrigin: 'center', 
-        ease: "elastic(1.5, 1)"
-      }})
-      .to(".bottom_bg .ball02", {}, 0.84) 
-      .to(".bottom_bg .ball03", {}, 1.36)
-      .to(".bottom_bg .ball04", {}, 1.92)
-
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: "#bottom_svg",
-          scrub: true,
-          start: "top bottom",
-        }
-      })
-      .to(".bottom_bg .ball01", {autoAlpha:1, duration:0.05})
-      .from(".bottom_bg .theLine", {drawSVG:0, duration:4}, 0)
-      .to(".bottom_bg .ball01", {motionPath:{
-        path:".bottom_bg .theLine",
-        align:".bottom_bg .theLine",
-        alignOrigin:[0.5, 0.5],
-      }, duration:4}, 0)
-      .add(bottomPulse, 0)
-
     /* SHOWCASE */
-    gsap.set(".bottom_con ul li img", { yPercent: -50, xPercent: -50 });
+    gsap.set(".personal_projects ul li img", { yPercent: -50, xPercent: -50 });
 
     let firstEnter;
-    gsap.utils.toArray(".bottom_con ul li").forEach((el) => {
-      const image = el.querySelector(".bottom_con ul li img"),
+    gsap.utils.toArray(".personal_projects ul li").forEach((el) => {
+      const image = el.querySelector(".personal_projects ul li img"),
         setX = gsap.quickTo(image, "x", { duration: 0.4, ease: "power3" }),
         setY = gsap.quickTo(image, "y", { duration: 0.4, ease: "power3" }),
         align = (e) => {
@@ -273,171 +246,160 @@ export function gsapController() {
       el.addEventListener("mouseleave", () => fade.reverse());
     });
 
-    /* PERSONAL PROECTS */
+  /* PERSONAL PROECTS */
   const marquees = [];
 
-gsap.utils.toArray('.personal_projects_con .bottom_info').forEach((line, i) => {
+  gsap.utils.toArray('.personal_projects .personal_projects_info').forEach((line, i) => {
 
-  const links = line.querySelectorAll("h2");
+    const links = line.querySelectorAll("h2");
 
-  const marquee = horizontalLoop(links, {
-    repeat: -1,
-    speed: 1 + i * 0.5,
-    reversed: i % 2 !== 0,
-    paddingRight: parseFloat(
-      gsap.getProperty(links[0], "marginRight", "px")
-    ) || 30
-  });
-
-  marquees.push({
-    tl: marquee,
-    direction: i % 2 !== 0 ? -1 : 1,
-    hovered: false
-  });
-
-  links.forEach(link => {
-
-    link.addEventListener("mouseenter", () => {
-      const item = marquees[i];
-      item.hovered = true;
-
-      gsap.to(item.tl, {
-        timeScale: item.direction * 0.2,
-        duration: 0.3,
-        overwrite: true
-      });
+    const marquee = horizontalLoop(links, {
+      repeat: -1,
+      speed: 1 + i * 0.5,
+      reversed: i % 2 !== 0,
+      paddingRight: parseFloat(
+        gsap.getProperty(links[0], "marginRight", "px")
+      ) || 30
     });
 
-    link.addEventListener("mouseleave", () => {
-      const item = marquees[i];
-      item.hovered = false;
-
-      gsap.to(item.tl, {
-        timeScale: item.direction,
-        duration: 0.3,
-        overwrite: true
-      });
+    marquees.push({
+      tl: marquee,
+      direction: i % 2 !== 0 ? -1 : 1,
+      hovered: false
     });
 
-  });
+    links.forEach(link => {
 
-});
+      link.addEventListener("mouseenter", () => {
+        const item = marquees[i];
+        item.hovered = true;
 
-
-let speedTween;
-
-ScrollTrigger.create({
-  trigger: "body",
-  start: "top top",
-  end: "bottom bottom",
-
-  onUpdate: (self) => {
-
-    speedTween?.kill();
-
-    speedTween = gsap.timeline();
-
-    marquees.forEach((item) => {
-
-      if (item.hovered) return;
-
-      speedTween
-        .to(item.tl, {
-          timeScale: item.direction * (self.direction > 0 ? 2 : -2),
-          duration: 0.25,
+        gsap.to(item.tl, {
+          timeScale: item.direction * 0.2,
+          duration: 0.3,
           overwrite: true
-        }, 0)
+        });
+      });
 
-        .to(item.tl, {
+      link.addEventListener("mouseleave", () => {
+        const item = marquees[i];
+        item.hovered = false;
+
+        gsap.to(item.tl, {
           timeScale: item.direction,
-          duration: 1,
+          duration: 0.3,
           overwrite: true
-        }, 0.25);
-
+        });
+      });
     });
+  });
 
-  }
-});
+
+  let speedTween;
+
+  ScrollTrigger.create({
+    trigger: "body",
+    start: "top top",
+    end: "bottom bottom",
+    onUpdate: (self) => {
+      speedTween?.kill();
+      speedTween = gsap.timeline();
+      marquees.forEach((item) => {
+        if (item.hovered) return;
+        speedTween
+          .to(item.tl, {
+            timeScale: item.direction * (self.direction > 0 ? 2 : -2),
+            duration: 0.25,
+            overwrite: true
+          }, 0)
+
+          .to(item.tl, {
+            timeScale: item.direction,
+            duration: 1,
+            overwrite: true
+          }, 0.25);
+      });
+    }
+  });
+
+  gsap.to(".timeline_info h2", {
+    duration: 1,
+    scrambleText: {
+      text: "Let's take it back.",
+      chars: "lowerCase",
+    },
+    scrollTrigger: {
+      trigger: '.timeline_info h2',
+      start: 'top 90%',
+    }
+  })
+
+  const pulses = gsap.timeline({
+    defaults: {
+      scale: 2,
+      autoAlpha:1,
+      transformOrigin: 'center', 
+      ease: "elastic(1.5, 1)"
+    }})
+    .to(".timeline_con .ball02, .text01, .text_2022, .text_2022 .img_con", {}, 0.84) 
+    .to(".timeline_con .ball03, .text02, .text_2024, .text_2024 .img_con", {}, 1.36)
+    .to(".timeline_con .ball04, .text03, .text_2025, .text_2025 .img_con", {}, 1.92)
+
+    const main = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#svg",
+        scrub: true,
+        start: "top center",
+      }
+    })
+    .to(".timeline_con .ball01", {autoAlpha:1, duration:0.05})
+    .from(".timeline_con .theLine", {drawSVG:0, duration:4}, 0)
+    .to(".timeline_con .ball01", {motionPath:{
+      path:".timeline_con .theLine",
+      align:".timeline_con .theLine",
+      alignOrigin:[0.5, 0.5],
+    }, duration:4}, 0)
+      .add(pulses, 0)
 
 
     /* FOOTER */
-    gsap.to(".timeline_info h2", {
-      duration: 1,
-      scrambleText: {
-        text: "Let's take it back.",
-        chars: "lowerCase",
-      },
+    gsap.to('.contact_bg', {
+      scale: 30,
+      ease: 'none',
       scrollTrigger: {
-        trigger: '.timeline_info h2',
-        start: 'top 90%',
+        trigger: ".contact_bg",
+        scrub: true,
+        start: "top 150%",
+        pinSpacing: false,
       }
     })
 
-    const pulses = gsap.timeline({
-      defaults: {
-        scale: 2,
-        autoAlpha:1,
-        transformOrigin: 'center', 
-        ease: "elastic(1.5, 1)"
-      }})
-      .to(".timeline_con .ball02, .text01, .text_2022, .text_2022 .img_con", {}, 0.84) 
-      .to(".timeline_con .ball03, .text02, .text_2024, .text_2024 .img_con", {}, 1.36)
-      .to(".timeline_con .ball04, .text03, .text_2025, .text_2025 .img_con", {}, 1.92)
-
-      const main = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#svg",
-          scrub: true,
-          start: "top center",
-        }
-      })
-      .to(".timeline_con .ball01", {autoAlpha:1, duration:0.05})
-      .from(".timeline_con .theLine", {drawSVG:0, duration:4}, 0)
-      .to(".timeline_con .ball01", {motionPath:{
-        path:".timeline_con .theLine",
-        align:".timeline_con .theLine",
-        alignOrigin:[0.5, 0.5],
-      }, duration:4}, 0)
-      .add(pulses, 0)
-
-      /* CONTACT */
-      gsap.to('.contact_bg', {
-        scale: 30,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: ".contact_bg",
-          scrub: true,
-          start: "top 150%",
-          pinSpacing: false,
-        }
-      })
-
-      let contactInfoH2 = new SplitText('.contact_info h2', {type: 'chars'})
-      gsap.from(contactInfoH2.chars, {
-        y: 1000,
-        opacity: 0,
-        stagger: {
-          each: 0.2,
-          from: 'edges'
+    let contactInfoH2 = new SplitText('.contact_info h2', {type: 'chars'})
+    gsap.from(contactInfoH2.chars, {
+      y: 1000,
+      opacity: 0,
+      stagger: {
+        each: 0.2,
+        from: 'edges'
+      },
+      scrollTrigger: {
+        trigger: ".contact_bg",
+        scrub: true,
+        start: "top center",
+        end: 'bottom 10%',
+        onEnter: () => {
+          gsap.to(['.nav_con ', '.header_con'], {
+            opacity: 1,
+            color: 'var(--secColor)',
+          })
         },
-        scrollTrigger: {
-          trigger: ".contact_bg",
-          scrub: true,
-          start: "top center",
-          end: 'bottom 10%',
-          onEnter: () => {
-            gsap.to(['.nav_con ', '.header_con'], {
-              opacity: 1,
-              color: 'var(--secColor)',
-            })
-          },
-          onLeaveBack: () => {
-            gsap.to(['.nav_con ', '.header_con'], {
-              opacity: 0,
-              color: 'var(--secColor)',
-            })
-          },
-        }
-      })
+        onLeaveBack: () => {
+          gsap.to(['.nav_con ', '.header_con'], {
+            opacity: 0,
+            color: 'var(--secColor)',
+          })
+        },
+      }
+    })
   })
 }

@@ -2,7 +2,7 @@
   <!-- LOADER -->
   <div id="loader">
     <div class="loader_content">
-      <h1>0%</h1>
+      <p>0%</p>
       <div class="progress_bar">
         <div class="progress_fill"></div>
       </div>
@@ -68,23 +68,9 @@
     
   <!-- BOTTOM -->
   <div id="bottom">
-    <div class="bottom_con">
-      <div class="bottom_bg">
-        <svg id="bottom_svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 600 1200">
-          <path class="line01 line" d="M 10 200  600 200" ></path>
-          <path class="line02 line" d="M 10 400  600 400" ></path>
-          <path class="line03 line" d="M 10 600  600 600" ></path>
-
-          <path class="theLine" 
-                d="M -5 0 Q 437 -2 483 248 T 252 510 Q 57 503 -1 344"
-                fill="none" stroke="white" stroke-width="20px" />
-
-          <circle class="ball ball01" r="20" cx="50" cy="100" fill="#fff"></circle>
-        </svg>
-      </div>
-
-      <div class="personal_projects_con">
-        <div class="bottom_info">
+      <!-- SHOWCASE -->
+      <div class="personal_projects">
+        <div class="personal_projects_info">
           <div>
             <h2>Personal</h2>
             <h2>Projects •</h2>
@@ -127,11 +113,8 @@
           </li>
         </ul>
       </div>
-    </div>
-  </div>
 
-    <!-- FOOTER -->
-    <div id="footer">
+      <!-- GALLERY -->
       <div id="circle_gallery" class="circle_gallery">
         <div id="circle_gallery_pin" class="circle_gallery_pin" >
           <img class="cg_img" src="../assets/images/html.webp">
@@ -143,6 +126,8 @@
           <p class="cg_phrase" id="cg_phrase"> Technologies <span class="other_accent">Used</span> </p>
         </div>
       </div>
+
+      <!-- TIMELINE -->
       <div class="timeline">
         <div class="timeline_info">
           <h2>Let's take it back.</h2>
@@ -158,7 +143,7 @@
 
             <path class="theLine" 
                   d="M -5 0 Q 450 230 300 450 T 130 750 Q 100 850 300 1000 T -49 1198"
-                  fill="none" stroke="white" stroke-width="20px" />
+                  fill="none" stroke="#f5f5f5" stroke-width="20px" />
 
             <circle class="ball ball01" r="20" cx="50" cy="100"></circle>
             <circle class="ball ball02" r="20" cx="278" cy="201"></circle>
@@ -188,6 +173,11 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+
       <div class="contact_con">
         <div class="contact_info">
           <div class="contact_bg"></div>
