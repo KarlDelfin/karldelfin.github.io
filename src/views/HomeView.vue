@@ -33,7 +33,7 @@
             <a href="https://www.linkedin.com/in/karl-john-delfin-33b3b22a4/" target="_blank" >LinkedIn</a >
           </div>
           <div class="copyright">
-            <p>Copyright © Karl John T. Delfin, {{ year }}</p>
+            <p>Copyright © <span>Karl John T. Delfin<q>,</q> <mark>{{ year }}</mark></span></p>
           </div>
         </div>
       </div>
@@ -41,12 +41,14 @@
 
     <!-- Banner -->
     <div id="banner">
-      <div class="banner_con">
-        <h1>
-          <span>Karl</span>
-          <span>John</span>
-        </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      <div class="wrapper">
+        <div class="banner_con">
+          <h1>
+            <span>Karl</span>
+            <span>John</span>
+          </h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        </div>
       </div>
     </div>
 
@@ -67,8 +69,8 @@
       </div>
     </div>
     
-  <!-- BOTTOM -->
-  <div id="bottom">
+    <!-- BOTTOM -->
+    <div id="bottom">
       <!-- SHOWCASE -->
       <div class="personal_projects">
         <div class="personal_projects_info">
@@ -160,18 +162,18 @@
 
           <div class="timeline_info">
             <div class="text_2022">
-              <p>Started working part-time as a <mark>Truck Helper</mark> during the<br/>pandemic while continuing my studies at <mark>University of Cebu</mark>.</p>
+              <p>Started working part-time as a <mark>Truck Helper</mark> during the<span> pandemic while continuing my studies at <mark>University of Cebu</mark>.</span></p>
               <div class="img_con">
                 <img src="../assets/images/trucking.webp" alt="trucking">
                 <img src="../assets/images/uc-study-hall.webp" alt="uc study hall">
               </div>
             </div>
             <div class="text_2024">
-              <p>Received my <mark>Alliance Jumpstart Program</mark><br/>and <mark>Skanlog ELEV8 Internship</mark> certificates.</p>
+              <p>Received my <mark>Alliance Jumpstart Program</mark><span> and <mark>Skanlog ELEV8 Internship</mark> certificates.</span></p>
             </div>
             <div class="text_2025">
               <p>Graduated from <mark>University of Cebu - Main Campus.</mark></p>
-              <p>Started my journey as a <mark>Web Developer</mark><br/>at a company based in Talisay, Cebu.</p>
+              <p>Started my journey as a <mark>Web Developer</mark><span> at a company based in Talisay, Cebu.</span></p>
               <div class="img_con">
                 <img src="../assets/images/uc-quadrangle.webp" alt="uc quadrangle">
                 <img src="../assets/images/employee-working.webp" alt="employee working">
@@ -184,15 +186,12 @@
 
     <!-- FOOTER -->
     <div id="footer">
-
       <div class="contact_con">
         <div class="contact_info">
           <div class="contact_bg"></div>
           <h2>Karl John</h2>
-          <div> </div>
         </div>
       </div>
-      
     </div>
   </div>
 </template>

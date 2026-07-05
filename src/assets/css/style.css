@@ -35,7 +35,7 @@ em, i { font-style: italic; }
 
 /* RESOURCES */
 #app {width: 100vw; overflow-x: hidden !important;}
-.wrapper{max-width: 1800px; margin: 0 auto;}
+.wrapper{max-width: 1800px; width: 95%; margin: 0 auto;}
 .line {overflow: hidden;}
 .image-trail { position: absolute; inset: 0; width: 150px; height: 200px; border-radius: 20px; object-fit: cover; pointer-events: none; opacity: 0; }
 
@@ -48,7 +48,7 @@ em, i { font-style: italic; }
 #header {position: fixed; top: 0; left: 0; width: 100%; z-index: 999; color: var(--secColor);}
     .header_con {display: flex; justify-content: start; padding: 25px 0;}
     .header_con p {font-size: 1rem;}
-    .header_con p mark{color: var(--thiColor);}
+    .header_con p mark{color: var(--thiColor); font-weight: 600}
     .header_con p span{display: block;}
 
 #nav {position: fixed; bottom: 0; width: 100%; z-index: 999; color: var(--secColor);}
@@ -59,6 +59,7 @@ em, i { font-style: italic; }
     .nav_con .social_media a:hover {text-decoration: underline; }
 
     .nav_con .copyright { position: absolute; right: 0; font-size: 1rem;}
+    .nav_con .copyright mark {color: var(--thiColor); font-weight: 600}
 
 #banner {min-height: 100vh; position: relative; background: var(--priColor); z-index: 9;}
 #banner:before {content: ''; position: absolute; background: linear-gradient(180deg,rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 1) 50%); height: 200px; width: 100%; top: -200px;}
@@ -95,7 +96,7 @@ em, i { font-style: italic; }
     .personal_projects_info div {display: flex; gap: 50px;}
     .personal_projects_info div h2{ white-space: nowrap; font-size: 10rem; font-weight: 700; letter-spacing: ls(120); color: var(--priColor);}
 
-    .personal_projects ul {margin: 0 auto; max-width: 800px; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    .personal_projects ul {margin: 0 auto; max-width: 800px; width: 95%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
     .personal_projects ul li { display: inline-block; border-bottom: 2px solid var(--priColor); width: 100%; padding: 25px 0; position: relative; z-index: 99;}
     .personal_projects ul li p {font-size: 32px; color: var(--priColor);}
     .personal_projects ul li img { position: fixed; top: 0; left: 0; width: 250px; height: 200px; object-fit: cover; transform: translateX(-50%) translateY(-50%); z-index: 9; opacity: 0; visibily: hidden; pointer-events: none; }
@@ -121,6 +122,7 @@ em, i { font-style: italic; }
     .timeline_info p{color: var(--priColor); font-size: 0.8rem; margin-bottom: 15px;}
     .timeline_info div {position: absolute; scale: 0}
     .timeline_info div mark {color: var(--thiColor);}
+    .timeline_info div p span {display: block;}
     .timeline_info .text_2022 {top: 185px; left: 0;}
     .timeline_info .text_2024 {top: 594px; left: -160px;}
     .timeline_info .text_2025 {top: 1025px; left: -20px;}
