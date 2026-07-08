@@ -189,7 +189,7 @@
       <div class="contact_con">
         <div class="contact_info">
           <div class="contact_bg"></div>
-          <h2>Karl John</h2>
+          <h2><span>Karl</span> <span>John</span></h2>
         </div>
       </div>
     </div>

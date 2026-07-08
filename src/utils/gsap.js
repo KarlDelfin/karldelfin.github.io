@@ -376,7 +376,7 @@ export function gsapController() {
 
     /* FOOTER */
     gsap.to('.contact_bg', {
-      scale: 30,
+      scale: 60,
       ease: 'none',
       scrollTrigger: {
         trigger: ".contact_bg",
@@ -392,13 +392,12 @@ export function gsapController() {
       opacity: 0,
       stagger: {
         each: 0.2,
-        from: 'edges'
       },
       scrollTrigger: {
-        trigger: ".contact_bg",
+        trigger: ".contact_info",
         scrub: true,
         start: "top center",
-        end: 'bottom 10%',
+        end: 'bottom bottom',
         onEnter: () => {
           gsap.to(['.nav_con ', '.header_con'], {
             opacity: 1,

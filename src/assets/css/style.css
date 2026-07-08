@@ -134,10 +134,10 @@ em, i { font-style: italic; }
 #footer::before { content: ''; position: absolute; background: linear-gradient(180deg,rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 1) 50%); height: 200px; width: 100%; top: -200px; }
     .contact_con {min-height: 100vh; margin: 500px 0 0 0;}
 
-    .contact_info {text-align: center; position: relative; display: flex; justify-content: space-between; flex-direction: column; min-height: 100vh;}
+    .contact_info {text-align: center; position: relative; display: flex; justify-content: center; flex-direction: column; min-height: 100vh;}
     .contact_info h2 {font-size: 19rem; font-weight: 700; font-family: var(--secFont); color: var(--secColor); z-index: 9;}
     .contact_info {margin: 25px 0; text-align: center;}
     .contact_info .copyright {position: relative; z-index: 1;}
     .contact_info .copyright p{ color: var(--secColor); font-size: 14px;}
 
-    .contact_bg {width: 100px; aspect-ratio: 1/1; transform: scale(0); background: var(--priColor); margin: 0 auto; border-radius: 50%;}
+    .contact_bg {width: 100px; aspect-ratio: 1/1; transform: scale(0); background: var(--priColor); margin: 0 auto; border-radius: 50%; position: absolute;}
