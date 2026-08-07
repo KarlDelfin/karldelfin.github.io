@@ -120,6 +120,12 @@
                   <p>Calendar</p>
               </a>
           </li>
+          <li>
+              <img src="../assets/images/upskills-team-building-services.webp" alt="Upskills Team Building Services">
+              <a href="https://upskills-team-building-services.vercel.app/" target="_blank">
+                  <p>Upskills Team Building Partners</p>
+              </a>
+          </li>
         </ul>
       </div>
 

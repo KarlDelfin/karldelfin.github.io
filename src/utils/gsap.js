@@ -16,22 +16,30 @@ export function gsapController() {
   let progress = 0;
   let pageLoaded = false;
 
-  window.addEventListener("load", () => {
+  if (document.readyState === "complete") {
     pageLoaded = true;
-  });
+  } else {
+    window.addEventListener("load", () => {
+      pageLoaded = true;
+    });
+  }
 
-  const counter = {
-    value: 0
-  };
+  setTimeout(() => {
+    pageLoaded = true;
+  }, 8000);
+
+  const counter = { value: 0 };
+
+  const textEl = document.querySelector(".loader_content p");
+  const fillEl = document.querySelector(".progress_fill");
 
   const loaderInterval = setInterval(() => {
-
     if (!pageLoaded) {
       if (progress < 90) {
         progress += Math.random() * 5;
       }
     } else {
-      progress += 10;
+      progress += 15;
     }
 
     progress = Math.min(progress, 100);
@@ -41,12 +49,8 @@ export function gsapController() {
       duration: 0.3,
       ease: "power1.out",
       onUpdate: () => {
-        document.querySelector(".loader_content p").textContent =
-          Math.floor(counter.value) + "%";
-
-        gsap.set(".progress_fill", {
-          width: counter.value + "%"
-        });
+        if (textEl) textEl.textContent = Math.floor(counter.value) + "%";
+        if (fillEl) gsap.set(fillEl, { width: counter.value + "%" });
       }
     });
 
@@ -54,23 +58,19 @@ export function gsapController() {
       clearInterval(loaderInterval);
 
       const tl = gsap.timeline();
-
       tl.to("#loader", {
-          duration: 1,
-          y: '-100%',
-          delay: 1
-        })
-        .set("#loader", {
-        })
-        .set(['html', 'body'], {
-          overflowY: 'auto'
-        })
-        .to("#main_content", {
-          opacity: 1,
-          duration: 1
-        });
+        duration: 1,
+        y: '-100%',
+        delay: 0.5
+      })
+      .set(['html', 'body'], {
+        overflowY: 'auto'
+      })
+      .to("#main_content", {
+        opacity: 1,
+        duration: 1
+      });
     }
-
   }, 100);
 
   window.addEventListener('load', () => {
