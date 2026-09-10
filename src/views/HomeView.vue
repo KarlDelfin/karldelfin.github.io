@@ -116,7 +116,7 @@
           </li>
           <li>
               <img src="../assets/images/calendar.webp" alt="Calendar">
-              <a href="https://karldelfin.github.io/calendar" target="_blank">
+              <a href="https://upskills-calendar.vercel.app/" target="_blank">
                   <p>Calendar</p>
               </a>
           </li>
